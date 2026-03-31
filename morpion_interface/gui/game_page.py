@@ -2,6 +2,7 @@ import tkinter as tk
 from tkinter import font
 from game.board import Board
 from ai.alphabeta import get_best_move
+from ai.ml_model import TicTacToeMLModel
 
 class GamePage(tk.Frame):
     def __init__(self, parent, show_page_callback):
@@ -10,6 +11,7 @@ class GamePage(tk.Frame):
         self.configure(bg="#f0f0f0")
         
         self.board = Board()
+        self.ml_model = TicTacToeMLModel()
         self.mode = "friend" 
         self.p1_name = "Joueur 1"
         self.p2_name = "Joueur 2"
@@ -96,7 +98,11 @@ class GamePage(tk.Frame):
         if self.game_over:
             return
             
-        square = get_best_move(self.board, self.ai_letter, self.difficulty)
+        if self.difficulty == "ML":
+            square = self.ml_model.predict_move(self.board, self.ai_letter)
+        else:
+            square = get_best_move(self.board, self.ai_letter, self.difficulty)
+            
         if square is not None:
             if self.board.make_move(square, self.ai_letter):
                 r, c = square // 3, square % 3

@@ -26,9 +26,10 @@ class AIPage(tk.Frame):
         diff_frame.pack(pady=5, anchor="w")
         self.difficulty_var = tk.StringVar(value="Facile")
         radio_opts = {"bg": "#ffffff", "font": ("Helvetica", 12), "activebackground": "#ffffff", "cursor": "hand2"}
-        tk.Radiobutton(diff_frame, text="Facile", variable=self.difficulty_var, value="Facile", **radio_opts).pack(side="left", padx=(0, 15))
-        tk.Radiobutton(diff_frame, text="Moyen", variable=self.difficulty_var, value="Moyen", **radio_opts).pack(side="left", padx=15)
-        tk.Radiobutton(diff_frame, text="Difficile", variable=self.difficulty_var, value="Difficile", **radio_opts).pack(side="left", padx=15)
+        tk.Radiobutton(diff_frame, text="Facile", variable=self.difficulty_var, value="Facile", **radio_opts).pack(side="left", padx=(0, 10))
+        tk.Radiobutton(diff_frame, text="Moyen", variable=self.difficulty_var, value="Moyen", **radio_opts).pack(side="left", padx=10)
+        tk.Radiobutton(diff_frame, text="Difficile", variable=self.difficulty_var, value="Difficile", **radio_opts).pack(side="left", padx=10)
+        tk.Radiobutton(diff_frame, text="IA (Modele ML)", variable=self.difficulty_var, value="ML", **radio_opts).pack(side="left", padx=(10, 0))
 
         # Symbole horizontal
         tk.Label(content_frame, text="Symbole :", bg="#ffffff", font=("Helvetica", 14, "bold")).pack(pady=(15, 5), anchor="w")
