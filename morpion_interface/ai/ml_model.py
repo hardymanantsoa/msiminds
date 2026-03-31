@@ -20,8 +20,8 @@ class TicTacToeMLModel:
 
     def load_model(self):
         try:
-            x_wins_path = os.path.join(self.model_dir, "best_model_x_wins.pkl")
-            is_draw_path = os.path.join(self.model_dir, "best_model_is_draw.pkl")
+            x_wins_path = os.path.join(self.model_dir, "model_x_wins.pkl")
+            is_draw_path = os.path.join(self.model_dir, "model_is_draw.pkl")
             
             if os.path.exists(x_wins_path):
                 with open(x_wins_path, "rb") as f:
