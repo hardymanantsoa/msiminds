@@ -32,8 +32,7 @@ class AIPage(tk.Frame):
         opts = {"bg": "#ECEFF4", "fg": "#2E3440", "font": ("Trebuchet MS", 12), "activebackground": "#ECEFF4", "cursor": "hand2", "selectcolor": "#ffffff"}
         tk.Radiobutton(diff_frame, text="Facile", variable=self.difficulty_var, value="Facile", **opts).pack(side="left")
         tk.Radiobutton(diff_frame, text="Moyen", variable=self.difficulty_var, value="Moyen", **opts).pack(side="left")
-        tk.Radiobutton(diff_frame, text="Difficile", variable=self.difficulty_var, value="Difficile", **opts).pack(side="left")
-        tk.Radiobutton(diff_frame, text="IA (ML)", variable=self.difficulty_var, value="ML", **opts).pack(side="left")
+        tk.Radiobutton(diff_frame, text="Difficile (ML)", variable=self.difficulty_var, value="Difficile", **opts).pack(side="left")
 
         tk.Label(form_frame, text="Symbole :", bg="#ECEFF4", font=("Trebuchet MS", 14, "bold"), fg="#4C566A").pack(anchor="w", pady=(15, 0))
         sym_frame = tk.Frame(form_frame, bg="#ECEFF4")
